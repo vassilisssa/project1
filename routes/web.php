@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', \App\Http\Controllers\IndexController::class);
+
+
+Route::get('/reg', RegController::class)->name('auth.reg.get');
+Route::get('/auth', AuthController::class)->name('auth.auth.get');
