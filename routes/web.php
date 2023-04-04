@@ -20,3 +20,13 @@ Route::get('/', \App\Http\Controllers\IndexController::class);
 
 Route::get('/reg', RegController::class)->name('auth.reg.get');
 Route::get('/auth', AuthController::class)->name('auth.auth.get');
+
+Route::get('/test', function (){
+    $post = new \App\Models\Post();
+    $post->forum_id = 2;
+    $post->author_id = 1;
+    $post->title = 'Пост 4';
+    $post->content = 'Тест контент';
+    $post->save();
+
+});
